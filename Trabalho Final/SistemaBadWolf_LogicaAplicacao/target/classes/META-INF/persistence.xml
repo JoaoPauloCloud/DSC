@@ -6,6 +6,10 @@
     <class>br.edu.ifnmg.sistemabadwolf.DomainModel.Pessoa</class>
     <class>br.edu.ifnmg.sistemabadwolf.DomainModel.Produto</class>
     <class>br.edu.ifnmg.sistemabadwolf.DomainModel.ItemVenda</class>
+    <class>br.edu.ifnmg.sistemabadwolf.DomainModel.ItemEntrada</class>
+    <class>br.edu.ifnmg.sistemabadwolf.DomainModel.PessoaJuridica</class>
+    <class>br.edu.ifnmg.sistemabadwolf.DomainModel.Autenticacao</class>
+    <class>br.edu.ifnmg.sistemabadwolf.DomainModel.Funcionarios</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SistemaAlegria?useTimezone=true&amp;serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

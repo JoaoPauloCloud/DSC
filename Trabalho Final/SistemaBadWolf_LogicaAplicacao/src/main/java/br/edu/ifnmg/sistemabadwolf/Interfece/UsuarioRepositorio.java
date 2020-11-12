@@ -1,6 +1,6 @@
 
 
-package br.edu.ifnmg.sistemabadwol.InterfeceRepositorios;
+package br.edu.ifnmg.sistemabadwolf.Interfece;
 
 import br.edu.ifnmg.sistemabadwolf.DomainModel.Usuario;
 
