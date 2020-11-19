@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 /**
  *
@@ -20,36 +21,34 @@ import javax.persistence.TemporalType;
 public class Usuario extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(length=250, nullable= false, unique=true)
+    @Column(length=250, nullable=false, unique=true)
     private String login;
     
     @Column(nullable=false)
     private String senha;
     
     @Temporal(TemporalType.TIMESTAMP)
-    private Date DAcesso;
-
+    private Date ultimoAcesso;
+    
+    @Version
+    private long versao;
+    
     public Usuario() {
         this.login = "";
         this.senha = "";
-        this.DAcesso = new Date();
+        this.ultimoAcesso = new Date();
     }
-    
-        
-    
 
-    public Usuario(String login, String senha, Date ultimoAcesso) {
+    public Usuario(String login, String senha) {
         this.login = login;
         this.senha = senha;
-        this.DAcesso = ultimoAcesso;
     }
     
-    
-
     public Long getId() {
         return id;
     }
@@ -74,16 +73,15 @@ public class Usuario extends Pessoa implements Serializable {
         this.senha = senha;
     }
 
-    public Date getDAcesso() {
-        return DAcesso;
+    public Date getUltimoAcesso() {
+        return ultimoAcesso;
     }
 
-    public void setDAcesso(Date DAcesso) {
-        this.DAcesso = DAcesso;
+    public void setUltimoAcesso(Date ultimoAcesso) {
+        this.ultimoAcesso = ultimoAcesso;
     }
     
     
-
     @Override
     public int hashCode() {
         int hash = 0;
