@@ -1,0 +1,9 @@
+br/edu/ifnmg/sistemabadwolf_persistencia/ClienteDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/UsuarioDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/RevendedorDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/FuncionarioDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/EnderecoDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/DataAccessObject.class
+br/edu/ifnmg/sistemabadwolf_persistencia/ItemSaidaDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/ItemEntradaDAO.class
+br/edu/ifnmg/sistemabadwolf_persistencia/ProdutoDAO.class

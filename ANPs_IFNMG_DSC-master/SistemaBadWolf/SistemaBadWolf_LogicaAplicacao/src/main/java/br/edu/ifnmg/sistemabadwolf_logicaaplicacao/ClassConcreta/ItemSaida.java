@@ -1,8 +1,10 @@
-package br.edu.ifnmg.sistemabadwolf.DomainModel;
+package br.edu.ifnmg.sistemabadwolf_logicaaplicacao.ClassConcreta;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,27 +21,38 @@ import javax.persistence.TemporalType;
  * @author João Paulo
  */
 @Entity
-@Table(name = "autenticacao")
-public class Autenticacao implements Serializable {
+@Table(name = "ItensSaidas")
+public class ItemSaida implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    public Long getId() {
-        return id;
-    }
     
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
     
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "produto_id", nullable = false)
+    private Produto produto;
+    
     @Temporal(TemporalType.TIMESTAMP)
-    public Date datalogin;
+    public Date data;
     
+    @Column(nullable = false)
+    private int quantidade;
     
+    @Column(nullable = false)
+    private int unidade;
     
+    @Column(nullable = false, scale = 2)
+    private BigDecimal Valor_venda;   
+    
+
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -55,10 +68,10 @@ public class Autenticacao implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Autenticacao)) {
+        if (!(object instanceof ItemSaida)) {
             return false;
         }
-        Autenticacao other = (Autenticacao) object;
+        ItemSaida other = (ItemSaida) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -67,7 +80,9 @@ public class Autenticacao implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.sistemabadwolf.DomainModel.Autenticacao[ id=" + id + " ]";
+        return this.id.toString();
     }
+
+    
 
 }
